@@ -4,8 +4,7 @@
     vars:
       include_vars:
         file: vars/tokens.yml
-        name: token
-      do_token: "{{ token }}"
+      do_token: "{{ do_api_token }}"
       droplets:
         - droplet-one
         - droplet-two
