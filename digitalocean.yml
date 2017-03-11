@@ -35,7 +35,7 @@
           ssh_key_ids={{ ansible_ssh_key.ssh_key.id }}
           api_token={{ do_token }}
         with_items: droplets
-        register: droplet_one
+        register: droplet_details
 
-      - debug: msg="IP is {{ droplet_one.droplet.ip_address }}"
+      - debug: msg="IP is {{ item.droplet.ip_address }}"
         with_items: droplet_details.results
