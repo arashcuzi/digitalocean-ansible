@@ -6,8 +6,8 @@
     vars:
       do_token: 2c34079168bac2c22cbfc724e230b36bdbdf21111c05dc13beaa682d02bdef50
       droplets:
-      - droplet-one
-      - droplet-two
+        - droplet-one
+        - droplet-two
 
     tasks:
       - name: check for ssh keys
@@ -34,7 +34,7 @@
           image_id=centos-7-x64
           ssh_key_ids={{ ansible_ssh_key.ssh_key.id }}
           api_token={{ do_token }}
-        with_items: droplets
+        with_items: "{{ droplets }}"
         register: droplet_details
 
       - debug: msg="IP is {{ item.droplet.ip_address }}"
