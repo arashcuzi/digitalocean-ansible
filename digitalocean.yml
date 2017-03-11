@@ -25,6 +25,7 @@
           state=present
           command=droplet
           name=droplet-one
+          unique_name=yes
           size_id=512mb
           region_id=nyc3
           image_id=centos-7-x64
