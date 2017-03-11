@@ -26,7 +26,7 @@
           command=droplet
           name=droplet-one
           size_id=512mb
-          region=nyc3
+          region_id=nyc3
           image_id=centos-7-3-x64
           ssh_key_ids={{ ansible_ssh_key.ssh_key.id }}
           api_token={{ do_token }}
