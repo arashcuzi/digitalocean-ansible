@@ -25,7 +25,7 @@
         register: ansible_ssh_key
       - name: ensure droplets exist
         digital_ocean: >
-          state=present
+          state=absent
           command=droplet
           name={{ item }}
           unique_name=yes
