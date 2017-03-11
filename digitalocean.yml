@@ -17,7 +17,7 @@
           ssh_key_file=.ssh/id_rsa
       - name: ensure key exists in DO
         digital_ocean: >
-          state=present
+          state=absent
           command=ssh
           name=ansible_ssh_key
           ssh_pub_key={{ lookup('file', '~/.ssh/id_rsa.pub') }}
