@@ -5,6 +5,9 @@
     #   file: vars/tokens.yml
     vars:
       do_token: 2c34079168bac2c22cbfc724e230b36bdbdf21111c05dc13beaa682d02bdef50
+      droplets:
+        - droplet-one
+        - droplet-two
 
     tasks:
       - name: check for ssh keys
@@ -24,13 +27,15 @@
         digital_ocean: >
           state=present
           command=droplet
-          name=droplet-one
+          name={{ item }}
           unique_name=yes
           size_id=512mb
           region_id=nyc3
           image_id=centos-7-x64
           ssh_key_ids={{ ansible_ssh_key.ssh_key.id }}
           api_token={{ do_token }}
+        with_items: droplets
         register: droplet_one
 
       - debug: msg="IP is {{ droplet_one.droplet.ip_address }}"
+        with_items: droplet_details.results
