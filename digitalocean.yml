@@ -37,5 +37,5 @@
         with_items: "{{ droplets }}"
         register: droplet_details
 
-      - debug: msg="IP is {{ item.droplet.ip_address }}"
+      - debug: msg="IP is {{ item }}"
         with_items: droplet_details.results
