@@ -1,10 +1,10 @@
 ---
   - hosts: digitalocean
 
-    include_vars:
-      file: vars/tokens.yml
-      name: token
     vars:
+      include_vars:
+        file: vars/tokens.yml
+        name: token
       do_token: "{{ token }}"
       droplets:
         - droplet-one
