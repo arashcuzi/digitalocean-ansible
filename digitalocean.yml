@@ -1,0 +1,14 @@
+---
+  - hosts: digitalocean
+
+    # include_vars:
+    #   file: vars/tokens.yml
+    vars:
+      do_token: 2c34079168bac2c22cbfc724e230b36bdbdf21111c05dc13beaa682d02bdef50
+
+    tasks:
+      - name: check for ssh keys
+        user: >
+          name: {{ ansible_user_id }}
+          generate_ssh_key=yes
+          ssh_keyfile=.ssh/id_rsa
