@@ -11,4 +11,4 @@
         user: >
           name: {{ ansible_user_id }}
           generate_ssh_key=yes
-          ssh_keyfile=.ssh/id_rsa
+          ssh_key_file=.ssh/id_rsa
