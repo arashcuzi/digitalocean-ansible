@@ -4,7 +4,7 @@
     # include_vars:
     #   file: vars/tokens.yml
     vars:
-      do_token: 2c34079168bac2c22cbfc724e230b36bdbdf21111c05dc13beaa682d02bdef50
+      do_token: 
       droplets:
         - droplet-one
         - droplet-two
