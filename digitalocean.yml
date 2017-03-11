@@ -38,4 +38,4 @@
         register: droplet_details
 
       - debug: msg="IP is {{ item }}"
-        with_items: droplet_details.results
+        with_items: droplet_details
