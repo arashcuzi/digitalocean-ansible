@@ -20,3 +20,16 @@
           ssh_pub_key={{ lookup('file', '~/.ssh/id_rsa.pub') }}
           api_token={{ do_token }}
         register: ansible_ssh_key
+      - name: ensure droplet one exists
+        digital_ocean: >
+          state=present
+          command=droplet
+          name=droplet-one
+          size_id=512mb
+          region=nyc3
+          image_id=centos-7-3-x64
+          ssh_key_ids={{ ansible_ssh_key.ssh_key.id }}
+          api_token={{ do_token }}
+        register: droplet_one
+
+      - debug: msg="IP is {{ droplet_one.droplet.ip_address }}"
