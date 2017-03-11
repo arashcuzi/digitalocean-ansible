@@ -1,9 +1,9 @@
 ---
   - hosts: digitalocean
+    vars_files:
+      - vars/tokens.yml
 
     vars:
-      include_vars:
-        file: vars/tokens.yml
       do_token: "{{ do_api_token }}"
       droplets:
         - droplet-one
